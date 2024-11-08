@@ -1,4 +1,5 @@
 import { auth, signIn, signOut } from '@/auth'
+import { redirect } from 'next/dist/server/api-utils'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -16,7 +17,7 @@ async function Navbar (){
                <Link href='/'> <span>Create</span></Link>
                <form action={async ()=>{
                   'use server'
-                  await signOut}}> <span>Logout</span></form>
+                  await signOut({ redirectTo: '/' })}}> <span>Logout</span></form>
                <Link href={`/user/${session?.user?.id}`}> <span>{session?.user?.name}</span></Link>
             </div>
          :
