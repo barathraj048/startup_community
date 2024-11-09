@@ -24,7 +24,7 @@ async function Navbar (){
          <div className='text-black flex'>
             <form action={async ()=>{
                'use server'
-               await signIn('github')}}>
+               await signIn('google')}}>
                <button type='submit'><span>Login</span></button>
             </form>
          </div>}
