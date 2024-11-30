@@ -14,7 +14,7 @@ async function Navbar (){
          {session && session?.user ?
             <div className='gap-4 text-black flex font-semibold'>
                <Link href='/'> 
-               <span className='' 
+               <span className='text-primary' 
                >Create</span></Link>
                <form action={async ()=>{
                   'use server'

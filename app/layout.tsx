@@ -1,17 +1,60 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import path from "path";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const workSans = localFont({
+  src: [
+    {
+      path: '/fonts/WorkSans-Bold.ttf', // Replace with your actual font file path
+      weight: '800', // Optional: specify font weight
+      style: 'normal', // Optional: specify font style
+    },
+    {
+      path: '/fonts/WorkSans-Black.ttf', // Replace with your actual font file path
+      weight: '900', // Optional: specify font weight
+      style: 'normal', // Optional: specify font style
+    },
+    {
+      path: '/fonts/WorkSans-Bold.ttf', // Replace with your actual font file path
+      weight: '700', // Optional: specify font weight
+      style: 'normal', // Optional: specify font style
+    },
+    {
+      path: '/fonts/WorkSans-Semibold.ttf', // Replace with your actual font file path
+      weight: '600', // Optional: specify font weight
+      style: 'normal', // Optional: specify font style
+    },
+    {
+      path: '/fonts/WorkSans-Medium.ttf', // Replace with your actual font file path
+      weight: '500', // Optional: specify font weight
+      style: 'normal', // Optional: specify font style
+    },
+    {
+      path: '/fonts/WorkSans-Medium.ttf', // Replace with your actual font file path
+      weight: '400', // Optional: specify font weight
+      style: 'normal', // Optional: specify font style
+    },
+    {
+      path: '/fonts/WorkSans-Light.ttf', // Replace with your actual font file path
+      weight: '300', // Optional: specify font weight
+      style: 'normal', // Optional: specify font style
+    },
+    {
+      path: '/fonts/WorkSans-ExtraLight.ttf', // Replace with your actual font file path
+      weight: '200', // Optional: specify font weight
+      style: 'normal', // Optional: specify font style
+    },
+    {
+      path: '/fonts/WorkSans-Thin.ttf', // Replace with your actual font file path
+      weight: '100', // Optional: specify font weight
+      style: 'normal', // Optional: specify font style
+    }
+  ],
+  variable: '--font-work-sans', // Optional: Controls font-display behavior
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,7 +69,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={workSans.variable}
       >
         {children}
       </body>
