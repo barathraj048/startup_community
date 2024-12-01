@@ -1,5 +1,6 @@
 import { promises } from "dns";
 import SearchForm from "../components/SearchForm";
+import Card from "../components/Card";
 
 export default async function Home({searchParams,
 }: {
@@ -15,6 +16,10 @@ export default async function Home({searchParams,
   
       <p className="sub-heading max-w-3xl">Submit Ideas, Vote on Pitches, and Get Noticed in Virtual Competitions</p>
       <SearchForm query={query}/>
+    </section>
+
+    <section>
+      <Card/>
     </section>
     </>
   );
