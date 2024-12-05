@@ -17,7 +17,7 @@ export default async function Home({searchParams,
       <SearchForm query={query}/>
     </section>
 
-    <section>
+    <section className="mx-12 sm:mx-16 md:24">
       <Card query={query}/>
     </section>
     </>

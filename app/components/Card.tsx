@@ -1,3 +1,4 @@
+import { Span } from 'next/dist/trace';
 import React from 'react';
 
 function Card({ query }: { query: any }) {
@@ -15,8 +16,11 @@ function Card({ query }: { query: any }) {
   ];
 
   return (
-    <div className='card_grid mt-16'>
-      {query && <span>Results of "{query}" are below...</span>}
+    <div>
+      <div className='text-black font-bold text-xl sm:text-2xl md:text-3xl mt-16 '>
+        {query ? <span>Results of "{query}" are below...</span> : <span>Recommended startups</span>}
+      </div>
+    <div className='card_grid mt-8'>
       {info.map(({ _createdAt, Views, Author, _id, description, image, title }) => (
         <div key={_id} className='startup-card'>
           <div className='flex justify-between text-[16px] font-medium'>
@@ -29,6 +33,7 @@ function Card({ query }: { query: any }) {
           <img src={image} alt={title} className='startup-card_img' />
         </div>
       ))}
+    </div>
     </div>
   );
 }

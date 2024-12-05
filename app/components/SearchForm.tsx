@@ -7,7 +7,7 @@ function SearchForm({query}:{
    let search=query
   return (
    <Form action='/' scroll={false} className='search-form justify-between'>
-      <input type="input" placeholder='Search For Startup' className='search-inputs focus:outline-none focus:border-transparent focus:bg-white w-full' name='search' defaultValue={search}/>
+      <input type="input" placeholder='Search For Startup' className='search-inputs focus:outline-none focus:border-transparent focus:bg-white w-full' name='query' defaultValue={query}/>
       
       <SearchButton/>
       
