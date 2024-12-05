@@ -1,41 +1,36 @@
-import React from 'react'
+import React from 'react';
 
-function Card() {
-   const info=[{
-      _createdAt:'19 May 2005',
-      Views:44,
-      Auther:{Name:'Raj', 
+function Card({ query }: { query: any }) {
+  const info = [
+    {
+      _createdAt: '19 May 2005',
+      Views: 44,
+      Author: { Name: 'Raj' }, // Corrected 'Auther' to 'Author'
+      _id: 1,
+      description: 'Description.......................................', // Corrected typo
+      image: 'https://via.placeholder.com/400', // Use an actual image URL for the demo
+      category: 'robot',
+      title: 'We Robot',
+    },
+  ];
 
-      },
-      _id:1,
-      discription : 'Discription.......................................',
-      image:'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DOKZFHo5p4VA&psig=AOvVaw2lkEa8pxJ97OS-ev75vpyC&ust=1733136002182000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOCzrfCwhooDFQAAAAAdAAAAABAE',
-      carogery:'robot',
-      title:'we robot'
-   }]
   return (
     <div className='card_grid mt-16'>
-      {
-         info && (
-            <div>
-              {info.map((info) => {
-                return <div key={info._id} className='startup-card'>
-                  <div className='flex justify-between text-[16px] font-medium'>
-                     <span className='startup-card_date'>{info._createdAt}</span>
-                     <span>@ {info.Views}</span>
-                  </div>
-                  <span className='px-4 font-semibold'>{info.Auther.Name}</span>
-                  <h1 className=''>{info.title}</h1>
-                  <span className='startup-card_desc'>{info.discription}</span>
-                  <img src={info.image} alt="img" className='startup-card_img'/>
-                  </div> 
-              })}
-            </div>
-          )
-          
-      }
+      {query && <span>Results of "{query}" are below...</span>}
+      {info.map(({ _createdAt, Views, Author, _id, description, image, title }) => (
+        <div key={_id} className='startup-card'>
+          <div className='flex justify-between text-[16px] font-medium'>
+            <span className='startup-card_date'>{_createdAt}</span>
+            <span>{Views} views</span>
+          </div>
+          <span className='px-4 font-semibold'>{Author.Name}</span>
+          <h1 className='startup-card_title'>{title}</h1>
+          <span className='startup-card_desc'>{description}</span>
+          <img src={image} alt={title} className='startup-card_img' />
+        </div>
+      ))}
     </div>
-  )
+  );
 }
 
-export default Card
+export default Card;

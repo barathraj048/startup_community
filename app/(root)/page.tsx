@@ -1,4 +1,3 @@
-import { promises } from "dns";
 import SearchForm from "../components/SearchForm";
 import Card from "../components/Card";
 
@@ -19,7 +18,7 @@ export default async function Home({searchParams,
     </section>
 
     <section>
-      <Card/>
+      <Card query={query}/>
     </section>
     </>
   );
